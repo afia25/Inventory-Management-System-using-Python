@@ -1,0 +1,63 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+cancel order
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<h3 align="left">Your Orders</h3>
+<br>
+
+<table>
+<thead>
+<tr>
+
+
+<th>Product ID</th>
+    <th>User ID</th>
+        <th>Quantity</th>
+
+
+
+    </tr>
+</thead>
+<tbody>
+   {% for c in orders %}
+<tr>
+
+
+    <td>{{ c.product_id }}</td>
+       <td>{{ c.user_id }}</td>
+     <td>{{ c.quantity }}</td>
+
+
+
+</tr>
+   {% endfor %}
+
+</tbody>
+</table>
+
+<br><br><br>
+<form method="POST" action="{% url 'cancelorder' %}">
+    {% csrf_token %}
+
+  <label for="id">Product ID:</label><br>
+  <input type="text" id="id" name="id">&#8202 &#8202
+
+<input type="submit" value="Cancel Order"><br><br>
+</form>
+
+<a href="{% url 'userorder' %}"> Buy Now &#8202 &#8202</a><br><br>
+<style>
+     h3{
+     color:#028494;
+
+     font-style:italic;
+   }
+</style>
+
+
+{% endblock %}

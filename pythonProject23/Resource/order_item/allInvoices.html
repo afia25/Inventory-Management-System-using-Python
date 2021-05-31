@@ -1,0 +1,42 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+All Invoices
+{% endblock %}
+
+{% block content %}
+<h1 align="center">All Invoices</h1>
+<br>
+<br>
+<table>
+<thead>
+<tr>
+<th>Invoice ID</th>
+<th>Quantity</th>
+<th>Selling Price</th>
+<th>Discount</th>
+<th>Delivery Charge</th>
+    <th>Transport Cost</th>
+<th>Total Price</th>
+<!--<th>Payment</th>
+<th>Due</th>-->
+    </tr>
+</thead>
+<tbody>
+   {% for c in invoices %}
+<tr>
+       <td>{{ c.invoice_id }}</td>
+       <td>{{ c.quantity }}</td>
+       <td>{{ c.selling_price }}</td>
+       <td>{{ c.discount }}</td>
+       <td>{{ c.delivary_charge }}</td>
+       <td>{{ c.transport_cost }}</td>
+        <td>{{ c.payment }}</td>
+       <!--<td>{{ c.due }}</td>-->
+
+
+</tr>
+   {% endfor %}
+</tbody>
+</table>
+{% endblock %}

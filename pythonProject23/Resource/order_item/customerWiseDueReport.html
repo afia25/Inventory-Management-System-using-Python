@@ -1,0 +1,30 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+CustomerWiseDueReport
+{% endblock %}
+
+{% block content %}
+<h1 align="center">Due Report</h1>
+<table>
+<thead>
+<tr>
+
+<th>Payment Method</th>
+<th>Payment Status</th>
+<th>User ID</th>
+    </tr>
+</thead>
+<tbody>
+   {% for c in ps %}
+<tr>
+       <td>{{ c.payment_method }}</td>
+       <td>{{ c.payment_status }}</td>
+       <td>{{ c.user_id_id }}</td><br>
+</tr>
+   {% endfor %}
+</tbody>
+</table>
+{% endblock %}
+
+

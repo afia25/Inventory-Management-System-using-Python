@@ -1,0 +1,35 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Customer Information
+{% endblock %}
+<div style="background-color: #20c997;">
+{% block content %}
+{% load static %}
+
+<h1 align="center">Customer Information</h1>
+<table>
+<thead>
+<tr>
+<th>User Name</th>
+<th>Name</th>
+<th>Email</th>
+<th>Delivery Address</th>
+<th>User ID</th>
+    </tr>
+</thead>
+<tbody>
+   {% for c in customers %}
+<tr>
+       <td>{{ c.user_name }}</td>
+       <td>{{ c.name }}</td>
+       <td>{{ c.email }}</td>
+       <td>{{ c.delivary_address }}</td>
+       <td>{{ c.user_id }}</td><br>
+</tr>
+   {% endfor %}
+</tbody>
+</table>
+
+{% endblock %}
+    </div>

@@ -1,0 +1,39 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Password Change
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <script>
+      document.getElementById("black1").innerHTML="";
+      document.getElementById("black2").innerHTML="";
+      document.getElementById("black3").innerHTML="";
+
+  </script>
+
+<div class="container" style="padding-left:25%; padding-right:25%;">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            {{ form | crispy }}
+
+        </fieldset>
+        <div class="submit">
+            <button class="form-group btn btn-outline-info" type="submit">
+               Change Password
+
+            </button>
+
+        </div>
+
+
+    </form>
+</div>
+
+
+
+{% endblock %}

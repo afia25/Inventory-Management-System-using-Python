@@ -1,0 +1,59 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Invoice
+{% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body id="bg" style="background-image:url('{% static 'customer/items/a1.jpg' %}')";>
+
+
+<!--<div class="container" style="padding-left:25%; padding-right:25%;">-->
+    <form method="POST">
+        {% csrf_token %}
+        <!--<label for="p_id">Product ID</label><br>
+
+        <input type="text" id="p_id" name="p_id"><br>
+        <input type="submit" value="Submit">-->
+        <fieldset class="form-group">
+
+             {{ invoiceform | crispy }}
+
+        </fieldset>
+        <div class="submit">
+            <button class="form-group btn btn-outline-info" type="submit">
+               Save Invoice
+
+            </button>
+
+        </div>
+
+
+    </form>
+<!--</div>-->
+
+</body>
+<style>
+    #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+</style>
+</html>
+
+
+
+
+{% endblock %}
+
+
+
+

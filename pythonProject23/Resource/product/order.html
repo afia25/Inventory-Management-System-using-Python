@@ -1,0 +1,103 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+order
+{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+<body id="bg" style="background-image:url('{% static 'customer/items/a1.jpg' %}')";>
+
+
+<br>
+
+<table>
+<thead>
+<tr>
+
+
+<th>Product ID</th>
+    <th>User ID</th>
+    <th>Quantity</th>
+
+
+
+    </tr>
+</thead>
+<tbody>
+   {% for c in orders %}
+<tr>
+
+
+    <td>{{ c.product_id }}</td>
+       <td>{{ c.user_id }}</td>
+    <td>{{ c.quantity }}</td>
+
+
+
+</tr>
+   {% endfor %}
+</tbody>
+</table>
+<br><br><br><br>
+
+<form method="POST">
+       {% csrf_token %}
+&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202
+&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202
+&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202
+&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202 &#8202
+                  <button class="form-group btn btn-outline-info" type="submit">
+                      Delete
+
+                 </button>
+   </form>
+</body>
+
+
+<style>
+
+   #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+table{
+      font-family: arial,sans-serif;
+      margin: 0 auto;
+      width: 80%;
+      margin-top: 100px;
+      /*border-collapse: collapse; ise for table e single border er jo*/
+ }
+table tr th{
+     border: 1px solid #ffffff;
+     background-color: #17a2b8;
+     color: #ffffff;
+     padding: 16px 22px:
+     border-radius: 5px 5px 0 0 !important;
+ }
+table tr th:first-child{
+    text-align: left;
+ }
+table tr td{
+     border: 1px solid #ffffff;
+     background-color: rgb(82,183,233);
+     padding: 10px 20px:
+     text-align: center;
+ }
+table tr{
+     opacity: .7;
+ }
+table tr:hover{
+     opacity: 1;
+ }
+
+</style>
+
+{% endblock %}
+

@@ -1,0 +1,140 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Due
+
+{% endblock %}
+{% load static %}
+
+
+{% block content %}
+<body id="bg" style="background-image:url('{% static 'customer/items/a1.jpg' %}')";>
+
+<!--<h1 align="center">Due</h1>-->
+<br>
+<h3 align="center">Due Report</h3>
+
+<table>
+<thead>
+<tr>
+<th>Customer ID</th>
+<th>Product Name</th>
+
+
+    <th>Price</th>
+    <th>Payment</th>
+<th>Due</th>
+    <th>Payment Status</th>
+
+<p id="p1">
+    </tr>
+</thead>
+<tbody>
+   {% for c in invoices %}
+<tr>
+
+       <td>{% if c.due > 0 %}
+           {{ c.customer_id }}
+        {% endif %}
+    </td>
+    <td>{% if c.due > 0 %}
+        {{ c.name_of_product }}
+        {% endif %}
+    </td>
+
+    <td>{% if c.due > 0 %}
+        {{ c.total }}
+        {% endif %}
+    </td>
+    <td>{% if c.due > 0 %}
+        {{ c.payment }}
+        {% endif %}
+    </td>
+
+    <td>{% if c.due > 0 %}
+        {{ c.due }}
+        {% endif %}
+    </td>
+    <td>
+        {% if c.due > 0 %}
+            Partially Paid
+        {% else %}
+            Paid
+        {% endif %}
+    </td>
+
+
+
+</tr>
+   {% endfor %}
+</tbody>
+</table>
+<br><br><br>
+<form method="POST" action="{% url 'due' %}">
+    {% csrf_token %}
+
+  <label for="id">Customer ID:</label><br>
+  <input type="text" id="id" name="id"><br><br>
+
+<input type="submit" value="Get User Details"><br><br>
+</form>
+
+{{ b.name }} &#8202 &#8202&#8202 &#8202
+{{ b.delivary_address }}&#8202 &#8202&#8202 &#8202
+{{ b.city}}&#8202 &#8202&#8202 &#8202
+{{ b.area }}&#8202 &#8202&#8202 &#8202
+{{ b.contact_number }}&#8202 &#8202&#8202 &#8202
+{{ b.payment_method }}
+<br><br>
+</body>
+
+
+<style>
+
+h3{
+     color:#028494;
+     font-size:36px;
+     font-style:italic;
+   }
+
+   #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+table{
+      font-family: arial,sans-serif;
+      margin: 0 auto;
+      width: 80%;
+      margin-top: 100px;
+      /*border-collapse: collapse; ise for table e single border er jo*/
+ }
+table tr th{
+     border: 1px solid #ffffff;
+     background-color: #17a2b8;
+     color: #ffffff;
+     padding: 16px 22px:
+     border-radius: 5px 5px 0 0 !important;
+ }
+table tr th:first-child{
+    text-align: left;
+ }
+table tr td{
+     border: 1px solid #ffffff;
+     background-color: rgb(82,183,233);
+     padding: 10px 20px:
+     text-align: center;
+ }
+table tr{
+     opacity: .7;
+ }
+table tr:hover{
+     opacity: 1;
+ }
+
+</style>
+
+{% endblock %}

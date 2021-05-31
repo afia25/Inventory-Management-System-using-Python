@@ -1,0 +1,63 @@
+
+
+
+{% extends 'customer/base.html' %}
+{% block title %}
+All Products
+{% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="title">
+<div class="container" style="padding-left:130%; padding-right:0%;">
+   <form method="POST" action="{% url 'productList' %}">
+       {% csrf_token %}
+
+                  <button class="form-group btn btn-outline-info" type="submit">
+                      View Cart
+
+                 </button>
+   </form>
+</div>
+
+<h3>Categories</h3>
+
+<a href="{% url 'clothes' %}"> Clothes &#8202 &#8202</a>
+<a href="{% url 'electronics' %}"> Electronics &#8202 &#8202</a>
+<a href="{% url 'food' %}"> Food &#8202 &#8202</a>
+<br><br><br>
+<div class="submit"><img style="height:172px; width:294px;" src="{% static 'customer/items/shirt.jpg' %}"ALIGN="left" /></div>
+
+
+
+      <!--<input type="submit" value="Submit">
+   </form>
+   </div>-->
+
+<!--<div><img style="height:172px; width:294px;" src="{% static 'customer/items/cardigan.jpg' %}"ALIGN="left" />
+
+</div>-->
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/tshirt.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/hoody.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/kidsclothes.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/heater.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/timer.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/pressostat.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/splashmotor.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/washtimer.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/corn.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/gasoline.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/steel.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/grain.jpg' %}"ALIGN="left" /></div>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/plasticbottle.jpg' %}"ALIGN="left" /></div><br>
+
+    </div>
+{% endblock %}
+
+
+
+
+
+

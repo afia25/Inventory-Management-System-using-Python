@@ -1,0 +1,59 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+User Details
+{% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body id="bg" style="background-image:url('{% static 'customer/items/back5.jpg' %}')";>
+
+  <form method="POST">
+
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            {{ userdetailsform | crispy }}
+
+        </fieldset>
+             <div class="submit">
+                  <button class="form-group btn btn-outline-info" type="submit">
+                      Submit
+
+                 </button>
+
+             </div>
+
+        </form>
+
+</body>
+<style>
+    #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+</style>
+</html>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .register-form{
+    border:1px;
+    padding:10 px;
+    box-shadow:5px 10px #888888;
+    }
+</style>
+
+
+<div class="container register-form" style="padding-left:10%; padding-right:10%;">
+    <!--<div class="register-form" style="margin-bottom:10%;">-->
+
+        <form method="POST">
+        <legend class="form-group border-bottom pb=-4">Sign up</legend>
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            {{ form | crispy }}
+            <!--{{ profileform | crispy }}-->
+
+        </fieldset>
+             <div class="submit">
+                  <button class="form-group btn btn-outline-info" type="submit">
+                      Sign up
+
+                 </button>
+
+             </div>
+
+        </form>
+    <div style="padding-bottom:15%" class="border-top pt=-4">
+        Alredy have an account?<a href="{% url 'login' %}">Sign in</a> here.
+    </div>
+
+</div>
+
+<div>
+    <br>
+    <br>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+
+</head>
+
+<body id="bg" style="background-image:url('{% static 'customer/items/back8.jpg' %}')";>
+
+
+
+
+
+
+<br><br><br>
+        <a href="{% url 'addproduct' %}"> Add New Product &#8202 &#8202 &#8202 &#8202 &#8202 &#8202</a><br><br>
+
+        <a href="{% url 'stockReport' %}"> Stock Report &#8202 &#8202</a>
+
+
+</body>
+<style>
+    #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+</style>
+</html>
+
+
+
+
+{% endblock %}

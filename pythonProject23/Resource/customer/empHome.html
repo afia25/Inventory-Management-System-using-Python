@@ -1,0 +1,33 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Employee
+{% endblock %}
+{% load static %}
+
+{% block content %}
+  <body id="bg" style="background-image:url('{% static 'customer/items/back2a.jpg' %}')";>
+<br><br>
+       <a href="{% url 'order' %}"> Orders &#8202 &#8202</a><br><br>
+         <a href="{% url 'invoice' %}"> Create an Invoice &#8202 &#8202</a><br><br>
+        <a href="{% url 'makeinvoice' %}"> All Invoices &#8202 &#8202</a><br><br>
+       <a href="{% url 'salesReport' %}"> Sales Report &#8202 &#8202</a><br><br>
+       <a href="{% url 'due' %}"> Due Report &#8202 &#8202</a><br><br>
+       <a href="{% url 'outOfStock' %}"> Out of Stock Products &#8202 &#8202</a>
+</body>
+<style>
+    #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+</style>
+</html>
+
+
+
+
+{% endblock %}

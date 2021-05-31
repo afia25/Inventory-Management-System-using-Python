@@ -1,0 +1,41 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <script>
+      document.getElementById("black1").innerHTML="";
+      document.getElementById("black2").innerHTML="";
+      document.getElementById("black3").innerHTML="";
+
+  </script>
+
+<div class="container" style="padding-left:25%; padding-right:25%;">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            {{ form | crispy }}
+
+        </fieldset>
+        <div class="submit">
+            <button class="form-group btn btn-outline-info" type="submit">
+               Sign in
+
+            </button>
+
+        </div>
+        <div class="border-top pt=-4">
+            Don't have an account?<a href="{% url 'register' %}">Sign up</a> here.
+        </div>
+
+    </form>
+</div>
+
+
+
+{% endblock %}

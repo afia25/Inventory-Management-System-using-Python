@@ -1,0 +1,24 @@
+
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<img src="{{ customer.profile.profile_picture.url }}" alt="{{ customer.profile.profile_picture.url }}">
+
+
+    <img style="height:70px; width:70px;" class="rounded-circle" src="{% static 'customer/items/back3.jpg' %}"ALIGN="left" />
+<br><br><br><br>
+{{ name }} <br><br>
+{{ email }} <br><br>
+
+<a href="{% url 'profileUpdate' %}">Update Profile</a><br><br>
+<a href="{% url 'pass_change' %}">Change Password</a><br><br>
+
+
+{% endblock %}

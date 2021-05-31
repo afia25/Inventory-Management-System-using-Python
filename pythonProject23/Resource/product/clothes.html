@@ -1,0 +1,146 @@
+
+
+
+{% extends 'customer/base.html' %}
+{% block title %}
+Clothes
+{% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="title">
+<div class="container" style="padding-left:130%; padding-right:0%;">
+   <form method="POST" action="{% url 'clothes' %}">
+       {% csrf_token %}
+
+                  <button class="form-group btn btn-outline-info" type="submit">
+                      View Cart
+
+                 </button>
+   </form>
+</div>
+
+<h3>Categories</h3>
+
+<a href="{% url 'clothes' %}"> Clothes &#8202 &#8202</a>
+<a href="{% url 'electronics' %}"> Electronics &#8202 &#8202</a>
+<a href="{% url 'food' %}"> Food &#8202 &#8202</a>
+<br><br><br>
+   <div class="submit"><img style="height:172px; width:294px;" src="{% static 'customer/items/shirt.jpg' %}"ALIGN="left" /></div>
+
+<br>{{ a.description }}
+    <br>Price: {{ a.selling_price }}
+    <br>Product ID: {{ a.id }}<br><br>
+<div class="container" style="padding-left:40%; padding-right:40%;">
+    <form method="POST">
+       {% csrf_token %}
+
+
+         <fieldset class="form-group">
+
+             {{ clothesform | crispy }}
+
+        </fieldset>
+        <div class="submit">
+            <button class="form-group btn btn-outline-info" type="submit">
+               Add to Cart
+
+            </button>
+
+        </div>
+
+
+    </form>
+</div>
+
+
+
+
+      <!--<input type="submit" value="Submit">
+
+   </div>--><br><br><br><br><br><br>
+
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/cardigan.jpg' %}"ALIGN="left" /></div>
+<br>{{ b.description }}
+    <br>Price: {{ b.selling_price }}
+    <br>Product ID: {{ b.id }}<br><br>
+<div class="container" style="padding-left:40%; padding-right:40%;">
+    <form method="POST">
+       {% csrf_token %}
+
+
+         <fieldset class="form-group">
+
+             {{ clothesform | crispy }}
+
+        </fieldset>
+        <div class="submit">
+            <button class="form-group btn btn-outline-info" type="submit">
+               Add to Cart
+
+            </button>
+
+        </div>
+
+
+    </form>
+</div>
+
+
+
+
+<br><br><br><br><br><br><br><br><br>
+<div><img style="height:172px; width:294px;" src="{% static 'customer/items/tshirt.jpg' %}"ALIGN="left" /></div>
+<br>{{ c.description }}
+    <br>Price: {{ c.selling_price }}
+    <br>Product ID: {{ c.id }}<br><br>
+<div class="container" style="padding-left:40%; padding-right:40%;">
+    <form method="POST">
+       {% csrf_token %}
+
+
+         <fieldset class="form-group">
+
+             {{ clothesform | crispy }}
+
+        </fieldset>
+        <div class="submit">
+            <button class="form-group btn btn-outline-info" type="submit">
+               Add to Cart
+
+            </button>
+
+        </div>
+
+
+    </form>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
